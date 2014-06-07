@@ -46,34 +46,43 @@ with(power_consumption_sample, {
   lines(power_consumption_sample$DateTime, power_consumption_sample$Global_active_power) 
 })
 
+## Bottom left
+with(power_consumption_sample, {
+        plot(
+                power_consumption_sample$DateTime, power_consumption_sample$Sub_metering_1,
+                xlab = "",
+                ylab = "Energy Sub Metering",
+                type = "n"
+        )
+	    lines(power_consumption_sample$DateTime, power_consumption_sample$Sub_metering_1)
+	    lines(power_consumption_sample$DateTime, power_consumption_sample$Sub_metering_2, col = "red")
+	    lines(power_consumption_sample$DateTime, power_consumption_sample$Sub_metering_3, col = "blue")
+	    legend(
+	      		"topright", 
+	      	  	legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
+	      	  	col = c("black", "red", "blue"),
+	      	  	lty = "solid",
+				bty = "n"
+	    )
+}
+)
+
 ## Top right
 with(power_consumption_sample, {
-  plot(power_consumption_sample$DateTime, power_consumption_sample$Voltage, type = "n") 
+  plot(power_consumption_sample$DateTime, power_consumption_sample$Voltage, 
+      xlab = "Date Time",
+      ylab = "Voltage",
+	  type = "n") 
   lines(power_consumption_sample$DateTime, power_consumption_sample$Voltage)
 })
 
-## Bottom left
-with(power_consumption_sample, {
-  plot(
-    power_consumption_sample$DateTime, power_consumption_sample$Sub_metering_1, 
-    type = "n",
-    ylab = "Energy sub metering",
-    xlab = ""
-  )
-  lines(power_consumption_sample$DateTime, power_consumption_sample$Sub_metering_1)
-  lines(power_consumption_sample$DateTime, power_consumption_sample$Sub_metering_2, col = "red")
-  lines(power_consumption_sample$DateTime, power_consumption_sample$Sub_metering_3, col = "blue")
-  legend(
-    "topright", 
-    legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
-    col = c("black", "red", "blue"),
-    lty = "solid"
-  )
-})
 
 ## Bottom right
 with(power_consumption_sample, {
-  plot(power_consumption_sample$DateTime, power_consumption_sample$Global_reactive_power, type = "n")
+  plot(power_consumption_sample$DateTime, power_consumption_sample$Global_reactive_power, 
+      xlab = "Date Time",
+	  ylab = "Global Reactive Power",
+	  type = "n")
   lines(power_consumption_sample$DateTime, power_consumption_sample$Global_reactive_power)
 })
 

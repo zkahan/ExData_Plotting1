@@ -30,6 +30,9 @@ power_consumption_sample <- power_consumption_data[power_consumption_data$Date =
 power_consumption_sample <- na.omit(power_consumption_sample)
 rownames(power_consumption_sample) <- NULL
 
+## Set up the layout to the plot the graphs
+par(mfcol = c(1, 1))
+
 ## Plot the graph to the screen
 with(power_consumption_sample, {
         plot(
