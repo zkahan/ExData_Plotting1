@@ -1,3 +1,10 @@
+## Coursera - Exploratory Data Analysis
+## Course Project 1
+
+## Zammi Kahan 
+## This is the R file (plot4.R) to generate the PNG plot4.png
+##
+
 ## Make sure that you have set the working directory to the location where data file was extracted.
 ## setwd("/Users/zammi/Documents/Coursera/Exploratory_Data_Analysis/Assignment1")
 getwd()
